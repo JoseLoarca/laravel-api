@@ -16,3 +16,20 @@ Content-Type: application/x-www-form-urlencoded
 id=99&content=new-element
 
 ###
+
+GET http://laravelapi-test.us-east-2.elasticbeanstalk.com/
+Accept: application/json
+
+###
+
+POST http://laravelapi-test.us-east-2.elasticbeanstalk.com/api/categories
+Content-Type: application/x-www-form-urlencoded
+
+id=99&content=new-element
+
+###
+
+GET http://laravelapi-test.us-east-2.elasticbeanstalk.com/api/products
+Accept: application/json
+
+###
