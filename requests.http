@@ -17,6 +17,11 @@ id=99&content=new-element
 
 ###
 
+GET http://127.0.0.1:8000/api/users
+Accept: application/json
+
+###
+
 GET http://laravelapi-test.us-east-2.elasticbeanstalk.com/
 Accept: application/json
 

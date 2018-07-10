@@ -29,6 +29,10 @@ class User extends Authenticatable
      */
     const REGULAR = 0;
 
+    /**
+     * @var string $table Nombre tabla usuarios
+     */
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
