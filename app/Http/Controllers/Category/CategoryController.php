@@ -15,6 +15,12 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $str = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu malesuada nulla, habitant non nisl mauris fringilla nec libero pulvinar rhoncus taciti, morbi nunc ligula justo quis elementum aliquet nibh bibendum.';
+
+        $array = explode(' ', $str);
+        shuffle($array);
+
+        var_dump($array);
     }
 
     /**
@@ -36,6 +42,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        echo 'Post recibido exitosamente: ';
+        var_dump($request->all());
     }
 
     /**
@@ -47,6 +55,12 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+        $str = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu malesuada nulla, habitant non nisl mauris fringilla nec libero pulvinar rhoncus taciti, morbi nunc ligula justo quis elementum aliquet nibh bibendum.';
+
+        $array = explode(' ', $str);
+        shuffle($array);
+
+        var_dump($array);
     }
 
     /**
