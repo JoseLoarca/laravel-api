@@ -16,6 +16,5 @@ Route::get('/', function () {
     {
         echo "Connected to database ".DB::connection()->getDatabaseName();
     }
-
     return view('welcome');
 });
