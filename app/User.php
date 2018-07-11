@@ -2,12 +2,13 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * @var int VERIFICADO Indica estado 'verificado' del usuario
@@ -35,6 +36,11 @@ class User extends Authenticatable
     protected $table = 'users';
 
     /**
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -47,6 +53,31 @@ class User extends Authenticatable
         'verification_token',
         'admin'
     ];
+
+    /**
+     * @param $value
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    /**
+     * @param $value
+     */
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
+
+    /**
+     * @param $value
+     * @return string
+     */
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

@@ -2,8 +2,17 @@
 
 namespace App;
 
+use App\Scopes\BuyerScope;
+
 class Buyer extends User
 {
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new BuyerScope);
+    }
+
     /**
      * Relacion tabla Compradores -> Transacciones
      *

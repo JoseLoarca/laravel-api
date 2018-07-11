@@ -22,6 +22,11 @@ Accept: application/json
 
 ###
 
+GET http://127.0.0.1:8000/api/users/102
+Accept: application/json
+
+###
+
 GET http://laravelapi-test.us-east-2.elasticbeanstalk.com/
 Accept: application/json
 
@@ -35,6 +40,49 @@ id=99&content=new-element
 ###
 
 GET http://laravelapi-test.us-east-2.elasticbeanstalk.com/api/products
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/users
+Content-Type: application/x-www-form-urlencoded
+
+name=Jose
+
+###
+
+PUT http://127.0.0.1:8000/api/users/95
+Content-Type: application/x-www-form-urlencoded
+
+email=josecarlos@lumail.net
+
+###
+
+DELETE http://127.0.0.1:8000/api/users/3
+
+###
+
+GET http://127.0.0.1:8000/api/users/95
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/132131321
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/sellers/14
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/1
 Accept: application/json
 
 ###
