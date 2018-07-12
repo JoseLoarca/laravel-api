@@ -23,6 +23,13 @@ class Category extends Model
     );
 
     /**
+     * @var array
+     */
+    protected $hidden = [
+        'pivot'
+    ];
+
+    /**
      * Relacion tabla Categorias -> Productos
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

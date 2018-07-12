@@ -37,6 +37,13 @@ class Product extends Model
     );
 
     /**
+     * @var array
+     */
+    protected $hidden = [
+        'pivot'
+    ];
+
+    /**
      * Verifica si un producto esta disponible
      */
     public function isDisponible()

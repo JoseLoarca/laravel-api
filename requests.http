@@ -22,7 +22,7 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/api/users/102
+GET http://127.0.0.1:8000/api/users/10
 Accept: application/json
 
 ###
@@ -51,10 +51,11 @@ name=Jose
 
 ###
 
-PUT http://127.0.0.1:8000/api/users/95
+PUT http://127.0.0.1:8000/api/users/10
 Content-Type: application/x-www-form-urlencoded
 
-email=josecarlos@lumail.net
+email=tkoelpin@example.com&name=Della Cormier
+
 
 ###
 
@@ -82,7 +83,96 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/api/buyers/1
+GET http://127.0.0.1:8000/api/categories
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/categories
+Content-Type: application/x-www-form-urlencoded
+
+name=Nueva Categoria&description=Descripcion de la nueva categoria
+
+###
+
+PUT http://127.0.0.1:8000/api/categories/32
+Content-Type: application/x-www-form-urlencoded
+
+name=Nueva Categoria ACTUALIZADA&description=Descripcion de la nueva categoria ACTUALIZADA
+
+###
+
+DELETE http://127.0.0.1:8000/api/categories/1
+Content-Type: application/x-www-form-urlencoded
+
+###
+
+GET http://127.0.0.1:8000/api/products
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/products/100
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/transactions
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/transactions/999
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/transactions/999/categories
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/transactions/999/sellers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/9/transactions
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/9/products
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/9/sellers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers/9/categories
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/categories/4/products
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/categories/4/sellers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/categories/4/transactions
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/categories/4/buyers
 Accept: application/json
 
 ###

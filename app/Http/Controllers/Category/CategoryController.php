@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
 
@@ -14,23 +15,7 @@ class CategoryController extends ApiController
      */
     public function index()
     {
-        //
-        $str = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu malesuada nulla, habitant non nisl mauris fringilla nec libero pulvinar rhoncus taciti, morbi nunc ligula justo quis elementum aliquet nibh bibendum.';
-
-        $array = explode(' ', $str);
-        shuffle($array);
-
-        var_dump($array);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $this->showAll(Category::all());
     }
 
     /**
@@ -41,59 +26,59 @@ class CategoryController extends ApiController
      */
     public function store(Request $request)
     {
-        //
-        echo 'Post recibido exitosamente: ';
-        var_dump($request->all());
+        $validation_rules = [
+            'name' => 'required',
+            'description' => 'required'
+        ];
+
+        $this->validate($request, $validation_rules);
+
+        $category = Category::create($request->all());
+
+        return $this->showOne($category, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
-        $str = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu malesuada nulla, habitant non nisl mauris fringilla nec libero pulvinar rhoncus taciti, morbi nunc ligula justo quis elementum aliquet nibh bibendum.';
-
-        $array = explode(' ', $str);
-        shuffle($array);
-
-        var_dump($array);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return $this->showOne($category);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $category->fill($request->only(['name', 'description']));
+
+        if ( ! $category->isDirty()) {
+            return $this->errorResponse('Debe especificar al menos un valor diferente para actualizar', 422);
+        }
+
+        $category->save();
+
+        return $this->showOne($category);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return $this->showOne($category);
     }
 }
