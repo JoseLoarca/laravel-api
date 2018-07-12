@@ -176,3 +176,35 @@ GET http://127.0.0.1:8000/api/categories/4/buyers
 Accept: application/json
 
 ###
+
+GET http://127.0.0.1:8000/api/sellers/4/transactions
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/sellers/4/categories
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/sellers/4/buyers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/sellers/4/products
+Accept: application/json
+
+###
+
+PUT http://127.0.0.1:8000/api/sellers/4/products/806
+Content-Type: application/x-www-form-urlencoded
+
+name=est1
+
+###
+
+DELETE http://127.0.0.1:8000/api/sellers/4/products/806
+Content-Type: application/x-www-form-urlencoded
+
+###
