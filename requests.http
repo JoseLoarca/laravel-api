@@ -208,3 +208,40 @@ DELETE http://127.0.0.1:8000/api/sellers/4/products/806
 Content-Type: application/x-www-form-urlencoded
 
 ###
+
+GET http://127.0.0.1:8000/api/products/5/transactions
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/products/5/buyers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/products/5/categories
+Accept: application/json
+
+###
+
+PUT http://127.0.0.1:8000/api/products/5/categories/30
+Content-Type: application/x-www-form-urlencoded
+
+###
+
+DELETE http://127.0.0.1:8000/api/products/5/categories/5
+Content-Type: application/x-www-form-urlencoded
+
+###
+
+POST http://127.0.0.1:8000/api/products/15/buyers/11/transactions
+Content-Type: application/x-www-form-urlencoded
+
+quantity=2
+
+###
+
+GET http://127.0.0.1:8000/api/products/15
+Accept: application/json
+
+###
