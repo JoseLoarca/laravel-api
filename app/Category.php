@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\CategoryTransformer;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -21,6 +22,11 @@ class Category extends Model
         'name',
         'description'
     );
+
+    /**
+     * @var string Category transformer
+     */
+    public $transformer = CategoryTransformer::class;
 
     /**
      * @var array

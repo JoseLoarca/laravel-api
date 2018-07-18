@@ -24,6 +24,11 @@ class DatabaseSeeder extends Seeder
         Transaction::truncate();
         DB::table('category_product')->truncate();
 
+        User::flushEventListeners();
+        Category::flushEventListeners();
+        Product::flushEventListeners();
+        Transaction::flushEventListeners();
+
         $cantidadUsuarios = 200;
         $cantidadCategories = 30;
         $cantidadProductos = 1000;
@@ -35,7 +40,6 @@ class DatabaseSeeder extends Seeder
         factory(Product::class, $cantidadProductos)->create()->each(
             function ($producto) {
                 $categorias = Category::all()->random(mt_rand(1, 2))->pluck('id');
-
                 $producto->categories()->attach($categorias);
             }
         );

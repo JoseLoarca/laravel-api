@@ -250,3 +250,37 @@ DELETE http://127.0.0.1:8000/api/sellers/4/products/1002
 Content-Type: application/x-www-form-urlencoded
 
 ###
+
+GET http://127.0.0.1:8000/api/users/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/users/verify/AW8jeBOfFOjtE46SJj1Tw0Uqc62ZT9dTbyA6C0R6
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/users
+Content-Type: application/x-www-form-urlencoded
+
+name=Jose Carlos&email=joseloarca@icloud.com&password=administrador&password_confirmation=administrador
+
+###
+
+PUT http://127.0.0.1:8000/api/users/201
+Content-Type: application/x-www-form-urlencoded
+
+email=jose.loarca@lumail.net
+
+###
+
+GET http://127.0.0.1:8000/api/users/201/resend
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/products/1
+Accept: application/json
+
+###

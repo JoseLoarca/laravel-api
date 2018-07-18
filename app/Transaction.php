@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\TransactionTransformer;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -19,6 +20,11 @@ class Transaction extends Model
         'buyer_id',
         'product_id'
     );
+
+    /**
+     * @var string Transaction transformer
+     */
+    public $transformer = TransactionTransformer::class;
 
     /**
      * Relacion tabla Transacciones -> Compradores

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\ProductTransformer;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -23,6 +24,11 @@ class Product extends Model
      * @var string NO_DISPONIBLE Indica estado 'no disponible'
      */
     const NO_DISPONIBLE = 'no disponible';
+
+    /**
+     * @var string Product transformer
+     */
+    public $transformer = ProductTransformer::class;
 
     /**
      * @var array
