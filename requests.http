@@ -280,7 +280,12 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/api/products?page=1&per_page=3
+GET http://127.0.0.1:8000/api/users
 Accept: application/json
+
+###
+
+DELETE http://127.0.0.1:8000/api/users/15
+Content-Type: application/json
 
 ###
