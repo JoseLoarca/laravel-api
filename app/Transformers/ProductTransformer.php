@@ -17,7 +17,7 @@ class ProductTransformer extends TransformerAbstract
     {
         return [
             'identifier'  => (int)$product->id,
-            'title'       => (string)$product->title,
+            'name'        => (string)$product->name,
             'description' => (string)$product->description,
             'available'   => (int)$product->quantity,
             'status'      => (string)$product->status,
@@ -37,7 +37,7 @@ class ProductTransformer extends TransformerAbstract
     {
         $attributes =  [
             'identifier'  => 'id',
-            'title'       => 'title',
+            'name'        => 'name',
             'description' => 'description',
             'available'   => 'quantity',
             'status'      => 'status',
