@@ -280,12 +280,32 @@ Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/api/users
+GET http://127.0.0.1:8000/api/categories
 Accept: application/json
 
 ###
 
 DELETE http://127.0.0.1:8000/api/users/15
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/products
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/buyers
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/api/sellers/16/transactions
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/categories
 Content-Type: application/json
 
 ###

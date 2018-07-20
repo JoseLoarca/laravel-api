@@ -23,7 +23,15 @@ class UserTransformer extends TransformerAbstract
             'isAdmin'    => (bool)$user->admin,
             'created_at' => (string)$user->created_at,
             'updated_at' => (string)$user->updated_at,
-            'deleted_at' => isset($user->deleted_at) ? (string)$user->deleted_at : null
+            'deleted_at' => isset($user->deleted_at) ? (string)$user->deleted_at : null,
+            //HATEOAS
+            //HATEOAS
+            'links'       => [
+                [
+                    'rel'  => 'self',
+                    'href' => route('users.show', $user->id)
+                ]
+            ]
         ];
     }
 
@@ -39,6 +47,26 @@ class UserTransformer extends TransformerAbstract
             'mail'       => 'email',
             'isVerified' => 'verified',
             'isAdmin'    => 'admin',
+            'created_at' => 'created_at',
+            'updated_at' => 'updated_at',
+            'deleted_at' => 'deleted_at'
+        ];
+
+        return isset($attributes[$index]) ? $attributes[$index] : null;
+    }
+
+    /**
+     * @param $index
+     * @return mixed|null
+     */
+    public static function transformedAttribute($index)
+    {
+        $attributes =  [
+            'id'         => 'identifier',
+            'name'       => 'name',
+            'email'      => 'mail',
+            'verified'   => 'isVerified',
+            'admin'      => 'isAdmin',
             'created_at' => 'created_at',
             'updated_at' => 'updated_at',
             'deleted_at' => 'deleted_at'
