@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jose
- * Date: 26/07/18
- * Time: 12:38 PM
- */
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <passport-authorized-clients></passport-authorized-clients>
+        </div>
+    </div>
+@endsection

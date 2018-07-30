@@ -25,4 +25,28 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function getTokens()
+    {
+        return view('home.personal-tokens');
+    }
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function getClients()
+    {
+        return view('home.personal-clients');
+    }
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function getAuthorizedClients()
+    {
+        return view('home.authorized-clients');
+    }
 }

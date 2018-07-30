@@ -9,6 +9,16 @@ use App\Http\Controllers\ApiController;
 class TransactionCategoryController extends ApiController
 {
     /**
+     * TransactionCategoryController constructor.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('client.credentials')->only(['index']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @param Transaction $transaction

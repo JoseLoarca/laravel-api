@@ -9,6 +9,16 @@ use App\Http\Controllers\ApiController;
 class SellerBuyerController extends ApiController
 {
     /**
+     * SellerBuyerController constructor.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @param Seller $seller
