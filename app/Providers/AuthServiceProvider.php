@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Buyer;
+use App\Policies\BuyerPolicy;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -15,7 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        Buyer::class => BuyerPolicy::class,
     ];
 
     /**
@@ -31,5 +33,12 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(Carbon::now()->addMinutes(120));
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
         Passport::enableImplicitGrant();
+
+        Passport::tokensCan([
+            'purchase-product' => 'Crear transacciones para comprar productos',
+            'manage-products'  => 'Crear, ver, actualizar y eliminar productos',
+            'manage-account'   => 'Obtener la informacion de la cuenta, nombre, email, estado. Modificar datos.',
+            'read-general'     => 'Obtener informacion en general.'
+        ]);
     }
 }
